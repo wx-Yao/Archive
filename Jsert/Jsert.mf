@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: lib/itextpdf-5.4.1.jar lib/jcommander-1.72.jar
+Main-Class: Jsert
+
