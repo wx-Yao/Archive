@@ -1,0 +1,14 @@
+# OS X
+.DS_Store*
+Icon?
+._*
+
+# npm
+node_modules
+package-lock.json
+*.log
+*.gz
+
+# data for the assignment
+# There should be no direcotry named data in this project otherwise it would be ignored
+data/

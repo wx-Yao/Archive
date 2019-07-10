@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+    <script src="js/authentication.js"></script>
+    <script src="js/apiwrapper.js"></script>
+    <script src="js/splash.js"></script>
+    <link rel="stylesheet" href="css/splash.css">
+    
+
+    <title>Article Insight</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="wrapper fadeInDown col-md-5">
+            <div id="Container-login">
+                <!-- Tabs Titles -->
+
+                <div class="fadeIn first">
+                    <img src="img/userlogo.png" height="100" width="100" name="signin" />
+                </div>
+
+                <div id="loginContainer">
+                    <input type="text" id="email" class="fadeIn second" title="Email" name="login" placeholder="Email"
+                        defaultvalue="username">
+                    <input type="password" id="password" class="fadeIn third" title="Password" name="password"
+                        placeholder="Password">
+            
+                    <button type="button" id="loginAction" style="width: auto" class="btn btn-light fadeIn second registerButton"
+                        name="register-submit" id="signUpAction"> Login</button>
+                </div>
+
+                <div hidden id="signUpContainer">
+                    <input type="text" id="firstName" title="Firt Name" class="fadeIn second" placeholder="First name">
+                    <input type="text" id=lastName title="Last Name" class="fadeIn second" placeholder="Last name">
+                    <input type="text" name="email" id="email2" class="fadeIn second" placeholder="Email Address"
+                        value="">
+                    <input type="password" name="password" id="password2" class="fadeIn third" placeholder="Password">
+                    <div>
+                        <button type="button" class="btn btn-light fadeIn second registerButton" name="register-submit"
+                            id="signUpAction"> Register Now</button>
+                    </div>
+                </div>
+                <h2 id="result"></h2>
+                <br>
+                <a href="#" id="loginSwitch">Register</a>
+            </div>
+        
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- Slideshow container -->
+        <div class="col-md-7 ml-md-auto">
+            <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides" style="display: block">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="/img/overall.png" style="width:220mm; height:100mm">
+                    <div class="text">Various analytics and visualisation at overall data set level</div>
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="/img/article.png" style="width:220mm; height:100mm">
+                    <div class="text">Various analytics and visualisation at individual level</article></div>
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="/img/author.png" style="width:220mm; height:100mm">
+                    <div class="text">Display all articles that are changed (or have revisions made) by a specific author</div>
+                </div>
+            </div>
+
+
+
+            <!-- Next and previous buttons -->
+
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>

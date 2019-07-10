@@ -1,0 +1,8 @@
+{
+    "admin_inactive": "./data/admin_inactive.txt",
+    "admin_active": "./data/admin_active.txt",
+    "admin_former": "./data/admin_former.txt",
+    "admin_semi_active": "./data/admin_semi_active.txt",
+    "bot": "./data/bot.txt",
+    "revisionDir": "./data/revisions"
+}

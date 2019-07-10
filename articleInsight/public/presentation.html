@@ -1,0 +1,279 @@
+<html>
+
+<head>
+    <title>Article Insight</title>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="/js/apiwrapper.js"></script>
+    <script src="/js/presentation.js"></script>
+    <script src="/js/jquery.easy-autocomplete.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/presentation.css">
+    <link rel="stylesheet" href="/css/easy-autocomplete.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Article Insight</a>
+            </div>
+            <div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#overall">OVERALL STATISTICS</a></li>
+                        <li><a href="#individual">ARTICLE INSIGHT</a></li>
+                        <li><a href="#author">AUTHOR VIEW</a></li>
+                    </ul>
+                    <ul class="navbar-nav navbar-right col-sm-1 offset-md-3" style="padding-top:1%;">
+                        <button id="logout">LOGOUT</button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="overall" class="container-fluid section overall-container">
+
+        <div class="row" style="margin:2%">
+
+
+            <div class="col-sm-5 col-md-6">
+                <h1>OVERALL STATISTICS</h1>
+
+                <li>The top and least revised articles and revision number : </li>
+
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="number" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="button" style="color:black"
+                            id="btn_getmore">Get more!</button>
+                    </form>
+                </nav>
+
+                <div id="table-1">
+                    <table class="table table-hover">
+                        <thead class="table-primary">
+                            <tr></tr>
+                            <th>Top Rank</th>
+                            <th>Article</th>
+                            <th>Revision Number</th>
+                        </thead>
+
+                        <tbody class="toptable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0" style="width:50%"">
+            <div id="overall_type_container"><img src="/img/loading.gif" alt="Loading.."></div>
+            <!-- <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"> -->
+
+            <div hidden id="overall_yearly_container"><img src="/img/loading.gif" alt="Loading.."></div>
+
+            <button class="btn btn-outline-success col-sm-3 col-md-2 offset-md-2 col-lg-1 offset-lg-4 navbar-right"
+                style="color:black;" id='switch'>Switch</button>
+        </div>
+    </div>
+
+
+    <div class="row" style="margin:2%">
+        <div class="col-sm-6 col-md-5 col-lg-6">
+            <div id="table-2">
+                <table class="table table-hover">
+                    <thead class="table-primary">
+                        <tr></tr>
+                        <th>Least Rank</th>
+                        <th>Article</th>
+                        <th>Revision Number</th>
+                    </thead>
+                    <tbody class="leasttable"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
+            <li class="popular">The most popular (edited by users) article: <span class="most"></span> revised by <span
+                    class="most"></span> users!</li>
+            <li class="popular">The least popular article: <span class="least"></span> revised by <span
+                    class="least"></span> users</li>
+            <li class="history">The top 2 longest history articles: <span class="most"></span>.
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first revision data:<span class="most"></span></br></li>
+            <li class="history">While the top 2 newest articles: <span class="least"></span>.
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first revision on <span class="least"></span>.</li>
+        </div>
+
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!--   Individual  -->
+
+    <div id="individual" class="container-fluid section individual-container ">
+
+        <div class="row" style="margin:1%">
+            <div class="col-sm-5 col-md-6">
+                <!-- <div class="row" style="margin:0.8%"> -->
+                <h1 style="color:rgba(29, 31, 32, 0.918)">ARTICLE INSIGHT</h1>
+                <nav class="navbar navbar-light bg-light">
+
+                    <input id="articles" type="text" placeholder="Refresh with the Article Name">
+                    <br>
+                    <div>
+
+                        <input id="from" placeholder="start year (optional)" type="number">
+                        <label>to</label>
+                        <input id="to" placeholder="end year (optional)" type="number">
+                        <!-- <button id='filter'>Filter</button> -->
+                    </div>
+                    <br>
+                    <button class="btn btn-outline-success" id="btn_articles">Get more!</button>
+                    <label id='tip_individual'></label>
+                    <label id='tip_individual2'></label>
+                </nav>
+
+
+
+            </div>
+
+
+            <div class="col-sm-5 offset-sm-2 col-md-5 offset-md-0" style="margin-top:5%; margin-left:4%">
+
+                <select id="individual_selection">
+                    <option value="distribution_user">Pie chart - revision number distribution based on user type
+                    </option>
+                    <option value="distribution_year_user">Bar chart - revision number distributed by year and by user
+                        type</option>
+                    <option value="distribution_top_5">Bar chart - revision number distributed by year and by top Top 5
+                        users</option>
+                </select>
+                <br><br>
+
+
+
+
+            </div>
+        </div>
+
+
+        <div clss="row">
+
+
+            <div class="col-sm-6 col-md-5 col-lg-6" style="margin-left:1%">
+
+                <div>
+                    <li><label>Is the article up to date: </label>
+                        <label id="update"></label></li>
+                    <div>
+                        <li><label>Number of new revisions fetched: </label>
+                            <label id="new_revisions"></label></li>
+                    </div>
+                    <div>
+                        <li><label>Current revision numebr in total: </label>
+                            <label id="revisions"></label></li>
+                    </div>
+                </div>
+
+
+
+                <table class="table table-hover">
+                    <thead class="table-primary">
+                        <th colspan=2>The top 5 regular users ranked by total revision numbers</th>
+                        <tr>
+                            <th>User</th>
+                            <th>revision</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-primary" id='name_and_count'>
+
+                    </tbody>
+                </table>
+
+                <br><br>
+            </div>
+
+
+
+
+
+
+            <div class="col-sm-6 col-md-5 offset-md-2 col-lg-5.5 offset-lg-0" style="margin-top:3%">
+                <div id="article_pie_container"><img src="/img/loading.gif" alt="Loading.."></div>
+                <div hidden class="col-md-10" id="artical_year_bar_container"><img src="/img/loading.gif"
+                        alt="Loading.."></div>
+                <div hidden class="col-md-10" id="article_user_container"><img src="/img/loading.gif" alt="Loading..">
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!--   Author  -->
+    <div id="author" class="container-fluid section author-container">
+        <div class="row" style="margin:2%">
+            <h1>AUTHOR VIEW</h1>
+
+            <nav class="navbar navbar-light bg-light" id="author-serach-container">
+                <form class="form-inline">
+                    <input id="author-search-box" class="form-control mr-sm-2" type="search"
+                        placeholder="Search author names" aria-label="Search">
+                    <input d="author-search" class="btn btn-outline-success my-2 my-sm-0" type="button"
+                        style="color:black" value="Go" id="author-search"></input>
+                    <span id="tips"> </span>
+                </form>
+            </nav>
+
+
+
+            <div id="authorstats-container">
+                <table class="table table-hover">
+                    <thead class="table-primary">
+                        <tr></tr>
+                        <th>Article Revised</th>
+                        <th>Rivision Number</th>
+                        <th>Timestamp</th>
+                    </thead>
+
+                    <tbody id="author-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+<footer class="footer bg-secondary"" style=" background-color:#e3eaf1ab">
+    <div class="container-fluid">
+        <p style="color:black">Copyright &copy 2019 Wayne Yao, Chen Cui, Tianming Chen</p>
+    </div>
+</footer>
+
+</html>

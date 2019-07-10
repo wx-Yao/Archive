@@ -1,0 +1,129 @@
+body {
+    position: relative; 
+   
+}
+
+input {
+    color: black;
+}
+li {
+    color: black;
+    font-size:17;
+
+}
+.section {
+    padding-top: 50px;
+    height: 100%;
+    color: #fff;
+}
+
+#overall{
+    
+    /* background-color: #46a9ff9c; */
+    background-color:rgb(136, 204, 241);
+    display: block;
+    overflow: auto;
+    min-height: 100%;
+  
+}
+
+
+#individual{
+    /* background-color: #673ab7; */
+    /* background-color:#cbf0f8; */
+    background-color:rgb(193, 223, 240);
+    height: 100%;
+    color:black;
+    display: block;
+    overflow: auto;
+
+}
+
+#author {
+    background-color:rgb(53, 135, 164);
+    /* background-color: #d6bcffcf;; */
+    display: block;
+    overflow: auto;
+}
+
+#marg{
+    margin:5%;
+}
+
+
+#overall_type_container{
+    float: right;
+    max-width: 100%;
+    max-height: 50%;
+    margin: 1%;
+    width: 95%;
+    height: 40%;
+    padding:0.9%;
+    text-align: center; 
+}
+
+#overall_yearly_container {
+    float: right;
+    margin: 1%;
+    width: 95%;
+    height: 40%; 
+    padding:0.9%;
+    text-align: center; 
+}
+
+input {
+    color: black
+}
+
+
+#artical_year_bar_container{
+    max-width: 100%;
+    max-height: 100%;
+}
+#article_pie_container, #article_user_container{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#footer{
+    background-color:black;
+}
+/* .table-1{
+    text-align: left;
+    vertical-align: middle;
+    padding: 0.5em 0em;   
+} 
+#toptable{
+    text-align: center;
+    padding: 0.5em 0.5em;   
+
+} */
+
+table thead tbody th {
+    text-align: center;
+    padding: 0.25em 0.75em; 
+ }
+
+
+tr:hover td {
+   background:transparent;
+}
+
+#logout {
+    color: gray;
+    outline: none;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+}
+#logout:hover {
+    color: white;
+}
+
+#tip_individual{
+    color: red;
+}
+#tip_individual2{
+    color: red;
+}
