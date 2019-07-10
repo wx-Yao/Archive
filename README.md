@@ -10,10 +10,10 @@ The codes are not guaranteed to run unless you settle the dependencies (database
 
 Short description of each project (organized in directory). Refer to specific directory for further description.
 
-- ArticleInsight. Full stack web application written in NodeJS & Mongodb & jQuery. It was an university assignment back in 06/2019.
+- [ArticleInsight](https://github.com/wx-Yao/Archive/tree/master/articleInsight). Full stack web application written in NodeJS. The stack is the typical MEAN (no Angular though) stack: Mongodb + NodeJS + Express.js + jQuery. It was an university assignment back in 06/2019. Update: I ended up a good mark of top 5 in that course:)
 
 - SVM for classifying Chars74K images. Using Support Vector Machine to classify alphanumeric characters with HOG. It was an university assignment back in 06/2019 and might be my last memory of machine learning stuff lol.
 
 - [Skynet](https://github.com/wx-Yao/Archive/tree/master/skynet). An interesting project that simulates (simplified) the real world bot net in master-slave communication model, which is capable of sending messages peer-to-peer, master bot signing files and slave bots reading files with public key infrastructure. The purpose was to understand and implement cryptographically secure communication in a high-level view. This was an university assignment back in 05/2017.
 
-- [Jsert](https://github.com/wx-Yao/Archive/tree/master/Jsert). A simple tool that adds a blank page after each page in a PDF. It enables to print single-paged PDF when a print couldn't be configured to do so.
+- [Jsert](https://github.com/wx-Yao/Archive/tree/master/Jsert). A simple tool written in Java, which is capable of adding a blank page after each page in a PDF. It enables to print single-paged PDF when a print couldn't be configured to do so.
