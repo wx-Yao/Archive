@@ -1,0 +1,35 @@
+{
+  "name": "gp3assignment",
+  "version": "1.0.0",
+  "description": "The applicaiton is produced by group 3 for comp5347 assignment 2",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.sydney.edu.au/SOFT5347-Web-Application-Development/WebDevAssignment2"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Wayne Yao, Tianming Chen and Chen Cui",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "bscript": "^0.1.0",
+    "easy-autocomplete": "^1.3.5",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "fs": "0.0.1-security",
+    "helmet": "^3.18.0",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.5.8",
+    "path": "^0.12.7",
+    "promise": "^8.0.3",
+    "request": "^2.88.0",
+    "supertest": "^4.0.2",
+    "validator": "^10.11.0"
+  }
+}
